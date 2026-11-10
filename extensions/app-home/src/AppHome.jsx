@@ -2,7 +2,6 @@ import {render} from 'preact';
 import {LocationProvider, ErrorBoundary, Router, Route} from 'preact-iso';
 
 import HomePage from './pages/HomePage.jsx';
-import FaqPage from './pages/FaqPage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 
@@ -19,7 +18,6 @@ function App() {
       <ErrorBoundary>
         <Router>
           <Route path="/" component={HomePage} />
-          <Route path="/faq/:id" component={FaqPage} />
           <Route path="/settings" component={SettingsPage} />
           <Route default component={NotFoundPage} />
         </Router>
