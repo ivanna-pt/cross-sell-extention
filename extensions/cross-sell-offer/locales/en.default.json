@@ -1,0 +1,7 @@
+{
+  "heading": "You may also like",
+  "add": "Add",
+  "addError": "Couldn't add this item. Please try again.",
+  "discountBadge": "Save {{percent}}%",
+  "discountNote": "Discount applied automatically"
+}

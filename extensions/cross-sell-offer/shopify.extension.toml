@@ -1,0 +1,114 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/latest/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2026-10"
+
+[[extensions]]
+name = "cross-sell-offer"
+handle = "cross-sell-offer"
+type = "ui_extension"
+uid = "9bc017b6-1895-8e42-7d3a-8b0ff6e7afcbc6495951"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/latest/targets
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/apps/build/checkout/capabilities#storefront-api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/apps/build/checkout/capabilities#network-access
+
+# network_access = true
+
+# Learn more about loading metafields on checkout resources, including the cart,
+# products, and customers:
+# https://shopify.dev/docs/api/checkout-ui-extensions/latest#configuration
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/latest#configuration
+
+[extensions.settings]
+
+[[extensions.settings.fields]]
+key = "heading"
+type = "single_line_text_field"
+name = "Block heading"
+description = "Leave empty to use the default: \"You may also like\"."
+
+[[extensions.settings.fields.validations]]
+name = "max"
+value = "60"
+
+# --- Offer 1 ---
+[[extensions.settings.fields]]
+key = "offer_1_variant"
+type = "variant_reference"
+name = "Offer 1 – product"
+description = "The product variant to suggest."
+
+[[extensions.settings.fields]]
+key = "offer_1_discount"
+type = "number_integer"
+name = "Offer 1 – discount %"
+description = "Shown as a \"Save X%\" badge. Create a matching automatic discount in Admin → Discounts. Leave empty for no badge."
+
+[[extensions.settings.fields.validations]]
+name = "min"
+value = "1"
+
+[[extensions.settings.fields.validations]]
+name = "max"
+value = "100"
+
+# --- Offer 2 ---
+[[extensions.settings.fields]]
+key = "offer_2_variant"
+type = "variant_reference"
+name = "Offer 2 – product"
+description = "The product variant to suggest."
+
+[[extensions.settings.fields]]
+key = "offer_2_discount"
+type = "number_integer"
+name = "Offer 2 – discount %"
+description = "Shown as a \"Save X%\" badge. Create a matching automatic discount in Admin → Discounts. Leave empty for no badge."
+
+[[extensions.settings.fields.validations]]
+name = "min"
+value = "1"
+
+[[extensions.settings.fields.validations]]
+name = "max"
+value = "100"
+
+# --- Offer 3 ---
+[[extensions.settings.fields]]
+key = "offer_3_variant"
+type = "variant_reference"
+name = "Offer 3 – product"
+description = "The product variant to suggest."
+
+[[extensions.settings.fields]]
+key = "offer_3_discount"
+type = "number_integer"
+name = "Offer 3 – discount %"
+description = "Shown as a \"Save X%\" badge. Create a matching automatic discount in Admin → Discounts. Leave empty for no badge."
+
+[[extensions.settings.fields.validations]]
+name = "min"
+value = "1"
+
+[[extensions.settings.fields.validations]]
+name = "max"
+value = "100"
